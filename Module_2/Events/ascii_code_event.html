@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Input">
+    <div id="Output"></div>
+    <script>
+        const input = document.getElementById('Input');
+        const output = document.getElementById('Output');
+
+        function handleInput() {
+            const inputValue = input.value;
+            let asciiOutput = "";
+            
+            for (let i = 0; i < inputValue.length; i++) {
+                const charCode = inputValue.charCodeAt(i);
+                asciiOutput += `ASCII of ${inputValue[i]} is: ${charCode}<br>`;
+            }
+            
+            output.innerHTML = asciiOutput;
+        }
+
+        input.addEventListener('input', handleInput);
+    </script>
+</body>
+</html>
